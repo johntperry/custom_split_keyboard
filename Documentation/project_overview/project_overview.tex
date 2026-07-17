@@ -1,0 +1,131 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Common Packages across layouts --- %
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{todonotes}
+\usepackage{dirtytalk}
+\usepackage{siunitx}
+\usepackage{xspace}
+\usepackage{lipsum} % For testing
+
+%\usepackage{allrunes} package allrunes to add, but currently unstable due to trying to redefine \swdefault and \dot
+
+
+
+% Article and report specific packages %
+
+% Visual style packages
+
+\usepackage[margin = 2.5cm]{geometry}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[nocheck]{fancyhdr}
+\usepackage{titlesec}
+\usepackage{blindtext}
+\usepackage{enumitem}
+\setitemize{itemsep=2pt, topsep=4pt, parsep=4pt, partopsep=6pt}
+
+% Maths / Science packages
+\usepackage{amsfonts, amssymb, amsmath, amsthm}
+\usepackage{bm}
+\usepackage{physics}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{cancel}
+\usepackage{mathrsfs} % New font family from \mathscr{}
+
+% Other utility packages
+\usepackage{multicol}
+\usepackage{afterpage}
+\usepackage[backend=biber, style=numeric]{biblatex}
+\addbibresource{references.bib}
+
+
+
+% My (John's) personal utility packages
+\usepackage{packages/johns-package-setup}
+\usepackage{packages/johns-preferences}
+
+
+% ============================================ %
+%    ARTICLE / SHORT REPORT TEMPLATE         %
+% ============================================ %
+
+% Article/short report template specific tweaks -- consider turning into a new (conditional) package
+\numberwithin{equation}{section}
+
+% Setting up headers and footers for fancyhf
+\fancyhf{}
+\fancyhead[R]{\today}
+\fancyhead[L]{Project Overview}
+\fancyfoot[C]{\thepage}
+\headsep = 15pt
+\voffset = 10pt
+
+% Title and introduction to the report
+\title{Project Overview}
+\author{John Perry\thanks{Churchill College}}
+\date{\today}
+
+\begin{document}
+
+\pagestyle{empty}
+\newgeometry{margin = 2cm}
+\pagenumbering{arabic}
+
+\maketitle
+
+% Set headers and footers to exist past the title page
+% \afterpage{\thispagestyle{fancy}} % Was useful when not dealing with multicol
+\pagestyle{fancy}
+
+\begin{abstract}
+    % Give the abstract of the document with the reason it exists, the significance of its contribution to the project and the conclusions it provides.
+    Document containing the overview of the plans and goals of the Custom Split Keyboard project. First, the different kinds of property desired from the keyboard are listed with a brief summary of each, then following that a more in-depth analysis of each property is given.
+\end{abstract}
+
+\section{Introduction}
+% Introduce the problem, and contextualise it and the objectives of the experiment/thing being reported on
+I currently feel like the keyboards I have don't fully meet my needs practically. Key things include:
+\begin{itemize}
+    \item More optimised/better battery life.
+    \item More portable so it can be taken round different places more easily.
+    \item More comfortable for the work I want to do with it.
+\end{itemize}
+
+\subsection{Objectives}
+
+The different objectives for the finished keyboard include:
+\begin{itemize}
+    \item \SI{80}{\percent}:\footnote{Or smaller? It should be investigated if I am comfortable with using layers \textit{if} they are comfortable for me.} I want a keyboard that is not too large.
+    \item \textbf{Ortholinear}: Partly that I want to try it out, but also it is meant to be very comfy.
+    \item \textbf{Custom layout}: I want to have a comfy layout that is much nicer for coding but also not too dissimilar from QWERTY because I realise that simply fully going away from the norm will be a massive pain to learn again.\footnote{Consider how much more I can use my thumbs for, as just on the spacebar is a waste!}
+    \begin{itemize}
+        \item Additionally, it would be good to have a \textit{flexible} layout as well. I want to be able to change my opinions on the locations of different keys and experiment.
+    \end{itemize}
+    \item \textbf{Split layout}: For ergonomics I want to try out a split layout, but I also want to be able to connect the two sides in a robust way to make a single keyboard (that also looks sleek) if wanted.\footnote{If I can connect the two sides with pogo pins that would be quite cool.}
+    \item \textbf{Low profile}: Currently I don't have any low profile keyboard, and it would be cool to have something that is more portable and practical to use.
+    \item \textbf{Top-of-the-line switches}: I might want to be able to use the keyboard for gaming, so top-tier switches would be preferable.
+    \item \textbf{Compact and portable}: I want to be able to pack and move the keyboard easily, to actually make it feel good to use and that I would want to take it with me.
+    \item \textbf{Good battery}: Since the battery is a point where many keyboards seem to make a compromise and cut corners, I want the battery life to be exceptional even in a small chassis.
+    \item \textbf{Nice feeling materials}: I want the keyboard to \textit{feel} premium. That means ceramic-like keycaps, metal (or high-quality plastic) frame, and nice rubber feet to make it feel sleek and premium.
+    \item \textbf{Good sound/acoustics}: I want it to feel nice to use, so it should have the capability to sound good---using nice materials and including space for sound dampening/adjustment.
+\end{itemize}
+
+\section{Custom layout}
+
+\begin{itemize}
+    \item Use my thumbs for more! What would be good to have on my thumbs would be commonly used coding symbols/buttons to press. For example:
+    \begin{itemize}
+        \item \textit{Enter} key: When writing code, it is very inconvenient to move fingers to press enter. It is also very on-theme.
+        \item \textit{Brackets/braces}: Different brackets and braces (e.g. [ ], \{ \}, ( )) would be good to have on thumbs. Particularly having the opening ones on my left and closing on my right would feel quite nice I'd imagine.
+    \end{itemize}
+    \item Relocating \say{home} and \say{end} might actually work well in a workflow if I get in the right patterns.
+    \item As well as pure coding, it would be nice to have 
+\end{itemize}
+
+\end{document}
