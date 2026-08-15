@@ -1,0 +1,220 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Common Packages across layouts --- %\
+\usepackage{lmodern} % Required before microtype to prevent erroring.
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{todonotes}
+\usepackage{dirtytalk}
+\usepackage{siunitx}
+\usepackage{xspace}
+\usepackage{lipsum} % For testing
+
+%\usepackage{allrunes} package allrunes to add, but currently unstable due to trying to redefine \swdefault and \dot
+
+
+
+% Article and report specific packages %
+
+% Visual style packages
+
+\usepackage[margin = 2.5cm]{geometry}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[nocheck]{fancyhdr}
+\usepackage{titlesec}
+\usepackage{blindtext}
+\usepackage{enumitem}
+\setitemize{itemsep=2pt, topsep=4pt, parsep=4pt, partopsep=6pt}
+
+% Maths / Science packages
+\usepackage{amsfonts, amssymb, amsmath, amsthm}
+\usepackage{bm}
+\usepackage{physics}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{cancel}
+\usepackage{mathrsfs} % New font family from \mathscr{}, \mathfrak{}.
+
+% Other utility packages
+\usepackage{multicol}
+\usepackage{afterpage}
+\usepackage[backend=biber, style=numeric]{biblatex}
+\addbibresource{references.bib}
+
+
+
+% My (John's) personal utility packages
+\usepackage{packages/johns-package-setup}
+\usepackage{packages/johns-preferences}
+
+
+% ============================================ %
+%    ARTICLE / SHORT REPORT TEMPLATE         %
+% ============================================ %
+
+% Article/short report template specific tweaks -- consider turning into a new (conditional) package
+\numberwithin{equation}{section}
+
+% Setting up headers and footers for fancyhf
+\fancyhf{}
+\fancyhead[R]{\today}
+\fancyhead[L]{Keyboard Layout}
+\fancyfoot[C]{\thepage}
+\headsep = 15pt
+\voffset = 10pt
+
+% Title and introduction to the report
+\title{Keyboard Layout}
+\author{John Perry\thanks{Churchill College}}
+\date{\today}
+
+\begin{document}
+
+\pagestyle{empty}
+\newgeometry{margin = 2cm}
+\pagenumbering{arabic}
+
+\maketitle
+
+% Set headers and footers to exist past the title page
+% \afterpage{\thispagestyle{fancy}} % Was useful when not dealing with multicol
+\pagestyle{fancy}
+
+
+\begin{abstract}
+    % Give the abstract of the document with the reason it exists, the significance of its contribution to the project and the conclusions it provides.
+    This document contains more detailed discussion of the layout of the keyboard, with a visual example of how the layout changes over time.
+\end{abstract}
+
+\section{Introduction}
+% Introduce the problem, and contextualise it and the objectives of the experiment/thing being reported on
+
+\section{Visual Layout}
+
+\begin{figure}[h]
+    \centering
+    \begin{subfigure}{0.495\textwidth}
+        \centering
+        \begin{tikzpicture}[line width=0.8pt, black, scale=1.2]
+            % Draw the 7x5 grid
+            \draw (0,0) grid (6,5);
+            
+            % Draw the guide dots along the boundaries
+            \foreach \x in {0,1,2,3,4,5,6} {
+                \fill (\x, 0) circle (1.5pt);
+                \fill (\x, 5) circle (1.5pt);
+            }
+            \foreach \y in {0,1,2,3,4,5} {
+                \fill (0, \y) circle (1.5pt);
+                \fill (6, \y) circle (1.5pt);
+            }
+
+            % Draw in the rows of symbols for the main symbol
+            \foreach \x in {0.35} {
+                \foreach \y in {0.25} {
+                    \node at (\x, \y + 4) {esc};
+                    \node at (\x + 1, \y + 4) {1};
+                    \node at (\x + 2, \y + 4) {2};
+                    \node at (\x + 3, \y + 4) {3};
+                    \node at (\x + 4, \y + 4) {4};
+                    \node at (\x + 5, \y + 4) {5};
+
+                    \node at (\x, \y + 3) {tab};
+                    \node at (\x + 1, \y + 3) {Q};
+                    \node at (\x + 2, \y + 3) {W};
+                    \node at (\x + 3, \y + 3) {E};
+                    \node at (\x + 4, \y + 3) {R};
+                    \node at (\x + 5, \y + 3) {T};
+
+                    \node at (\x, \y + 2) {caps};
+                    \node at (\x + 1, \y + 2) {A};
+                    \node at (\x + 2, \y + 2) {S};
+                    \node at (\x + 3, \y + 2) {D};
+                    \node at (\x + 4, \y + 2) {F};
+                    \node at (\x + 5, \y + 2) {G};
+
+                    \node at (\x, \y + 1) {shift};
+                    \node at (\x + 1, \y + 1) {Z};
+                    \node at (\x + 2, \y + 1) {X};
+                    \node at (\x + 3, \y + 1) {C};
+                    \node at (\x + 4, \y + 1) {V};
+                    \node at (\x + 5, \y + 1) {B};
+
+                    \node at (\x, \y) {ctrl};
+                    \node at (\x + 1, \y) {meta};
+                    \node at (\x + 2, \y) {alt};
+                    \node at (\x + 3, \y) {$($};
+                    \node at (\x + 4, \y) {fn};
+                    \node at (\x + 5, \y) {space};
+                }
+            }
+        \end{tikzpicture}
+        \caption{Left Hand}\label{fig:left-hand-layout}
+    \end{subfigure}
+    \begin{subfigure}{0.495\textwidth}
+        \centering
+        \begin{tikzpicture}[line width=0.8pt, black, scale=1.2]
+            % Draw the 7x5 grid
+            \draw (0,0) grid (6,5);
+            
+            % Draw the guide dots along the boundaries
+            \foreach \x in {0,1,2,3,4,5,6} {
+                \fill (\x, 0) circle (1.5pt);
+                \fill (\x, 5) circle (1.5pt);
+            }
+            \foreach \y in {0,1,2,3,4,5} {
+                \fill (0, \y) circle (1.5pt);
+                \fill (6, \y) circle (1.5pt);
+            }
+
+            % Draw in the rows of symbols for the main symbol
+            \foreach \x in {0.35} {
+                \foreach \y in {0.25} {
+                    \node at (\x, \y + 4) {6};
+                    \node at (\x + 1, \y + 4) {7};
+                    \node at (\x + 2, \y + 4) {8};
+                    \node at (\x + 3, \y + 4) {9};
+                    \node at (\x + 4, \y + 4) {0};
+                    \node at (\x + 5, \y + 4) {};
+
+                    \node at (\x, \y + 3) {Y};
+                    \node at (\x + 1, \y + 3) {U};
+                    \node at (\x + 2, \y + 3) {I};
+                    \node at (\x + 3, \y + 3) {O};
+                    \node at (\x + 4, \y + 3) {P};
+                    \node at (\x + 5, \y + 3) {};
+
+                    \node at (\x, \y + 2) {H};
+                    \node at (\x + 1, \y + 2) {J};
+                    \node at (\x + 2, \y + 2) {K};
+                    \node at (\x + 3, \y + 2) {L};
+                    \node at (\x + 4, \y + 2) {;};
+                    \node at (\x + 5, \y + 2) {'};
+
+                    \node at (\x, \y + 1) {N};
+                    \node at (\x + 1, \y + 1) {M};
+                    \node at (\x + 2, \y + 1) {,};
+                    \node at (\x + 3, \y + 1) {.};
+                    \node at (\x + 4, \y + 1) {/};
+                    \node at (\x + 5, \y + 1) {shift};
+
+                    \node at (\x, \y) {space};
+                    \node at (\x + 1, \y) {fn};
+                    \node at (\x + 2, \y) {$)$};
+                    \node at (\x + 3, \y) {};
+                    \node at (\x + 4, \y) {};
+                    \node at (\x + 5, \y) {};
+                }
+            }
+        \end{tikzpicture}
+        \caption{Right Hand}\label{fig:right-hand-layout}
+    \end{subfigure}
+    \caption{Hand layouts for the proposed keyboard layout.}\label{fig:proposed-keyboard-layout}
+\end{figure}
+
+\end{document}
+
