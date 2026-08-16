@@ -1,0 +1,98 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Common Packages across layouts --- %\
+\usepackage{lmodern} % Required before microtype to prevent erroring.
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{todonotes}
+\usepackage{dirtytalk}
+\usepackage{siunitx}
+\usepackage{xspace}
+\usepackage{lipsum} % For testing
+
+%\usepackage{allrunes} package allrunes to add, but currently unstable due to trying to redefine \swdefault and \dot
+
+
+
+% Article and report specific packages %
+
+% Visual style packages
+
+\usepackage[margin = 2.5cm]{geometry}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[nocheck]{fancyhdr}
+\usepackage{titlesec}
+\usepackage{blindtext}
+\usepackage{enumitem}
+\setitemize{itemsep=2pt, topsep=4pt, parsep=4pt, partopsep=6pt}
+
+% Maths / Science packages
+\usepackage{amsfonts, amssymb, amsmath, amsthm}
+\usepackage{bm}
+\usepackage{physics}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{cancel}
+\usepackage{mathrsfs} % New font family from \mathscr{}, \mathfrak{}.
+
+% Other utility packages
+\usepackage{multicol}
+\usepackage{afterpage}
+\usepackage[backend=biber, style=numeric]{biblatex}
+\addbibresource{references.bib}
+
+
+
+% My (John's) personal utility packages
+\usepackage{packages/johns-package-setup}
+\usepackage{packages/johns-preferences}
+
+
+% ============================================ %
+%    ARTICLE / SHORT REPORT TEMPLATE         %
+% ============================================ %
+
+% Article/short report template specific tweaks -- consider turning into a new (conditional) package
+\numberwithin{equation}{section}
+
+% Setting up headers and footers for fancyhf
+\fancyhf{}
+\fancyhead[R]{\today}
+\fancyhead[L]{Mechanical Design}
+\fancyfoot[C]{\thepage}
+\headsep = 15pt
+\voffset = 10pt
+
+% Title and introduction to the report
+\title{Mechanical Design}
+\author{John Perry\thanks{Churchill College}}
+\date{\today}
+
+\begin{document}
+
+\pagestyle{empty}
+\newgeometry{margin = 2cm}
+\pagenumbering{arabic}
+
+\maketitle
+
+% Set headers and footers to exist past the title page
+% \afterpage{\thispagestyle{fancy}} % Was useful when not dealing with multicol
+\pagestyle{fancy}
+
+
+\begin{abstract}
+    % Give the abstract of the document with the reason it exists, the significance of its contribution to the project and the conclusions it provides.
+    This document contains general discussion of the mechanical design of the keyboard. This includes things such as the case design, mechanisms, and wrist-rests. Discussion of the switches and keycaps also exists in this document.
+\end{abstract}
+
+\section{Introduction}
+% Introduce the problem, and contextualise it and the objectives of the experiment/thing being reported on
+
+
+\end{document}
+
