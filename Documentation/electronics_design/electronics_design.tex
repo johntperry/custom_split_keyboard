@@ -1,0 +1,103 @@
+\documentclass[11pt,a4paper]{article}
+
+% --- Common Packages across layouts --- %\
+\usepackage{lmodern} % Required before microtype to prevent erroring.
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{xcolor}
+\usepackage{todonotes}
+\usepackage{dirtytalk}
+\usepackage{siunitx}
+\usepackage{xspace}
+\usepackage{fontawesome5}
+\usepackage{lipsum} % For testing
+
+%\usepackage{allrunes} package allrunes to add, but currently unstable due to trying to redefine \swdefault and \dot
+
+
+
+% Article and report specific packages %
+
+% Visual style packages
+
+\usepackage[margin = 2.5cm]{geometry}
+\usepackage{wrapfig}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[nocheck]{fancyhdr}
+\usepackage{titlesec}
+\usepackage{blindtext}
+\usepackage{enumitem}
+\setitemize{itemsep=2pt, topsep=4pt, parsep=4pt, partopsep=6pt}
+
+% Maths / Science packages
+\usepackage{amsfonts, amssymb, amsmath, amsthm}
+\usepackage{bm}
+\usepackage{physics}
+\usepackage{tikz}
+\usepackage{circuitikz}
+\usepackage{cancel}
+\usepackage{mathrsfs} % New font family from \mathscr{}, \mathfrak{}.
+
+% Other utility packages
+\usepackage{multicol}
+\usepackage{afterpage}
+\usepackage[backend=biber, style=numeric]{biblatex}
+\addbibresource{references.bib}
+
+
+
+% My (John's) personal utility packages
+\usepackage{packages/johns-package-setup}
+\usepackage{packages/johns-preferences}
+
+
+% ============================================ %
+%    ARTICLE / SHORT REPORT TEMPLATE         %
+% ============================================ %
+
+% Article/short report template specific tweaks -- consider turning into a new (conditional) package
+\numberwithin{equation}{section}
+
+% Setting up headers and footers for fancyhf
+\fancyhf{}
+\fancyhead[R]{\today}
+\fancyhead[L]{Electronics Design}
+\fancyfoot[C]{\thepage}
+\headsep = 15pt
+\voffset = 10pt
+
+% Title and introduction to the report
+\title{Electronics Design}
+\author{John Perry\thanks{Churchill College}}
+\date{\today}
+
+\begin{document}
+
+\pagestyle{empty}
+\newgeometry{margin = 3cm}
+\pagenumbering{arabic}
+
+\maketitle
+
+% Set headers and footers to exist past the title page
+% \afterpage{\thispagestyle{fancy}} % Was useful when not dealing with multicol
+\pagestyle{fancy}
+
+\begin{abstract}
+    % Give the abstract of the document with the reason it exists, the significance of its contribution to the project and the conclusions it provides.
+    This document contains the details of the electronics for the keyboard. This includes the PCB design, details of the potential trackpad integration, and Bluetooth/Wireless connection system to allow each half to communicate with each other and with the computer.
+\end{abstract}
+
+\section{Introduction}
+% Introduce the problem, and contextualise it and the objectives of the experiment/thing being reported on
+
+As might be expected with this kind of project, the electronics design\footnote{Along with the firmware, potentially.} will likely be the most difficult part of the project. Because of this, it makes sense to heavily base the electronics design on an existing open-source project. An early section of this document is dedicated entirely to determining which areas this valuable information can be pulled from, and which open-source projects are suitable to be replicated.
+
+\section{How keyboard internals work}
+
+\section{Open-source inspiration}
+
+\end{document}
+

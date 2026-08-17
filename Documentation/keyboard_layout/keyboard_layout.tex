@@ -21,7 +21,7 @@
 
 % Visual style packages
 
-\usepackage[margin = 2.5cm]{geometry}
+\usepackage[margin = 4cm]{geometry}
 \usepackage{wrapfig}
 \usepackage{caption}
 \usepackage{subcaption}
@@ -76,7 +76,7 @@
 \begin{document}
 
 \pagestyle{empty}
-\newgeometry{margin = 2cm}
+\newgeometry{margin = 3cm}
 \pagenumbering{arabic}
 
 \maketitle
@@ -102,7 +102,7 @@ The goals for the keyboard and keyboard layout as a whole is to provide a medium
     \centering
     \begin{subfigure}{0.495\textwidth}
         \centering
-        \begin{tikzpicture}[line width=0.8pt, black, scale=1]
+        \begin{tikzpicture}[line width=0.8pt, black, scale=0.95]
             % Draw the 7x5 grid
             \draw (0,0) grid (6,5);
             
@@ -149,7 +149,7 @@ The goals for the keyboard and keyboard layout as a whole is to provide a medium
                     \node at (\x + 2, \y) {alt};
                     \node at (\x + 3, \y) {$($};
                     \node at (\x + 4, \y) {fn};
-                    \node at (\x + 5, \y) {\Huge{␣}};
+                    \node at (\x + 5, \y) {\rotatebox[origin=c]{180}{\Large{$\Rsh$}}};
                 }
             }
 
@@ -188,7 +188,7 @@ The goals for the keyboard and keyboard layout as a whole is to provide a medium
                     \node at (\x + 2, \y) {};
                     \node at (\x + 3, \y) {$[$};
                     \node at (\x + 4, \y) {};
-                    \node at (\x + 5, \y) {};
+                    \node at (\x + 5, \y) {\Huge{␣}};
                 }
             }
 
@@ -235,7 +235,7 @@ The goals for the keyboard and keyboard layout as a whole is to provide a medium
     \end{subfigure}
     \begin{subfigure}{0.495\textwidth}
         \centering
-        \begin{tikzpicture}[line width=0.8pt, black, scale=1]
+        \begin{tikzpicture}[line width=0.8pt, black, scale=0.95]
             % Draw the 7x5 grid
             \draw (0,0) grid (6,5);
             
@@ -368,6 +368,13 @@ The goals for the keyboard and keyboard layout as a whole is to provide a medium
     \end{subfigure}
     \caption{Hand layouts for the proposed keyboard layout. Potential \href{https://www.steamdeck.com/en/tech}{Steam Deck trackpads} are shown approximately where the thumbs come out. Elements in green are mappings that are not fully confident.}\label{fig:proposed-keyboard-layout}
 \end{figure}
+
+\subsection{Notes on the layout}
+
+A few notes on some things to note with the keyboard layout in Figure~\ref{fig:proposed-keyboard-layout}:
+\begin{itemize}
+    \item The space key on the left side of the keyboard is partially illustrative of the fact that it should still operate as a \say{jump} button with games.
+\end{itemize}
 
 \end{document}
 
